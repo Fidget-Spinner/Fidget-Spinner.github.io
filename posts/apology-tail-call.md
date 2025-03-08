@@ -14,7 +14,7 @@ tail-calling interpreter into Python. That interpreter
 reported a 9-15% performance boost on Python 3.14's Whats New page.
 
 These figures turned out to be inaccurate. Long story short,
-the compiler were were using (Clang 19), had a bug that 
+the compiler we were using (Clang 19), had a bug that 
 worsened our baseline performance. We (the CPython 
 developers) were completely unaware of this bug.
 
