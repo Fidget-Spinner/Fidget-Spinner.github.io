@@ -29,7 +29,7 @@ Read it if you want to learn more about:
   6. Superinstructions
 
 Out of the above, the tail-calling interpreter has been upstreamed.
-Tracing from function entrypoints is likely to be upstreamed by not in its
+Tracing from function entrypoints is likely to be upstreamed but not in its
 current form.
 
 Read more [here](../resources/FYP%20Final%20Report%20H341100.pdf).
