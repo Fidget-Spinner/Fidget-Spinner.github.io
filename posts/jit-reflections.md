@@ -105,6 +105,10 @@ Conveying performance is a really hard job. One that I'm still struggling with
 aspiring scientist, I can't stand by and watch people say the JIT is "2-9%" 
 faster than the intepreter. It's really more nuanced than that (see section 
 above). Often times, the CPython 3.13 JIT is a lot slower than the interpreter.
+Furthermore, the linked comment is that the JIT is 2-9% faster than the
+_tier 2_ interpreter. That's the interpreter that executes our JIT 
+intermediate representation by interpreting it, which is super slow. It's not 
+copmaring to the actual CPython interpreter.
 
 I've seen other sources repeat this number too. It frustrates me a lot. The 
 problem with saying the 3.13 JIT is faster is that it sets the wrong 
@@ -115,7 +119,15 @@ This goes against the grain of what's reported online. We do not have control ov
 ## Conclusion and looking forward
 
 I'm still hopeful for the JIT. As I mentioned above, we've built a significant 
-community around it. We're now starting to pick up momentum on issues and new optimizations that could bring single-digit percentage speedups to the JIT in 3.14 (note: this is the geometric mean of our benchmarks, so real speedups might be greater or lesser). Brandt has already merged some [optimizations](https://github.com/python/cpython/pull/135905) for the JIT's machine code. I don't want to bring unwanted attention to the other efforts for the moment. Just know this: there are mulitiple parallel efforts to improve the JIT now that we have a bigger community around it that can enable such work.
+community around it. We're now starting to pick up momentum on issues and new 
+optimizations that could bring single-digit percentage speedups to the JIT in 
+3.14 (note: this is the geometric mean of our benchmarks, so real speedups 
+might be greater or lesser). Brandt has already merged some
+[optimizations](https://github.com/python/cpython/pull/135905)
+for the JIT's machine code. I 
+don't want to bring unwanted attention to the other efforts for the moment. 
+Just know this: there are multiple parallel efforts to improve the JIT now 
+that we have a bigger community around it that can enable such work.
 
 
 
