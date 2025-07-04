@@ -108,7 +108,7 @@ above). Often times, the CPython 3.13 JIT is a lot slower than the interpreter.
 Furthermore, the linked comment is that the JIT is 2-9% faster than the
 _tier 2_ interpreter. That's the interpreter that executes our JIT 
 intermediate representation by interpreting it, which is super slow. It's not 
-copmaring to the actual CPython interpreter.
+comparing to the actual CPython interpreter.
 
 I've seen other sources repeat this number too. It frustrates me a lot. The 
 problem with saying the 3.13 JIT is faster is that it sets the wrong 
