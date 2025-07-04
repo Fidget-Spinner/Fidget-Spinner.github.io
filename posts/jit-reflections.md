@@ -116,6 +116,10 @@ expectations. Again, users on the Python Discourse forum and privately have
 shared performance numbers where the JIT is a significant regression for them.
 This goes against the grain of what's reported online. We do not have control over the numbers, but I still would like to clear the air on what the real expectation should be.
 
+## Ugly: None
+
+If I had thought there were really ugly stuff, I wouldn't be working on the JIT anymore :-).
+
 ## Conclusion and looking forward
 
 I'm still hopeful for the JIT. As I mentioned above, we've built a significant 
