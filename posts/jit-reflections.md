@@ -80,7 +80,7 @@ However, IMO that's not entirely fair to the interpreter, as we're purposely lim
 we _know_ is worse for it. You can see this effect very clearly on Thomas Wouter's analysis
 [here](https://github.com/Yhg1s/python-benchmarking-public). In short, the JIT is almost always slower
 than the interpreter if you use a modern compiler. This also assumes the interpreter doesn't get hit
-by random performance bugs on the side (which have happened many times now).
+by random performance bugs on the side (which has happened many times now).
 
 You might ask: why is the 3.14 JIT not much faster? The real answer, which 
 again hurts me to say is that the 3.14 JIT has almost no major performance 
@@ -95,7 +95,8 @@ performance is the right choice for long-term sustainability of the JIT.
 
 ## Bad: Inaccurate coverage
 
-The initial coverage of the JIT got the numbers wrong. There was this number 
+The initial media coverage of the JIT got the numbers wrong by misinterpreting 
+our results. There was this number 
 of "2-9%" faster than the interpreter being spread around. I think the first 
 major blog post that covered this was
 [this one](https://tonybaloney.github.io/posts/python-gets-a-jit.html#is-it-faster). Note that I'm friends with the 
