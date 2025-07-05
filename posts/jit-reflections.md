@@ -34,7 +34,7 @@ This wasn't always the case. When the JIT started out, it was practically
 only Brandt working on the machine code generator. I had help from Mark (Shannon)
 and Guido in landing the initial optimizer, but after that it was mostly me.
 Later I got busier with school work and Brandt became the sole contributor to
-the optimizer for a a few months or so. Those were dark times.
+the optimizer for a few months or so. Those were dark times.
 
 I'm really happy to say that we have more contributors today though:
 * Savannah works on the machine code generator, reproducible JIT stencils, and 
