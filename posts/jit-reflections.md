@@ -97,7 +97,7 @@ performance is the right choice for long-term sustainability of the JIT.
 
 The initial media coverage of the JIT got the numbers wrong by misinterpreting 
 our results. There was this number 
-of "2-9%" faster than the interpreter being spread around. I think the first 
+of "2-9%" faster being spread around. I think the first 
 major blog post that covered this was
 [this one](https://tonybaloney.github.io/posts/python-gets-a-jit.html#is-it-faster). Note that I'm friends with the 
 author of that post and I'm not trying to say that they did a bad job.
