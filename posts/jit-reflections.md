@@ -126,7 +126,7 @@ If I had thought there were really ugly stuff, I wouldn't be working on the JIT 
 I'm still hopeful for the JIT. As I mentioned above, we've built a significant 
 community around it. We're now starting to pick up momentum on issues and new 
 optimizations that could bring single-digit percentage speedups to the JIT in 
-3.14 (note: this is the geometric mean of our benchmarks, so real speedups 
+3.15 (note: this is the geometric mean of our benchmarks, so real speedups 
 might be greater or lesser). Brandt has already merged some
 [optimizations](https://github.com/python/cpython/pull/135905)
 for the JIT's machine code. I 
