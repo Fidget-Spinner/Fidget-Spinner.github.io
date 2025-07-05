@@ -2,7 +2,7 @@
 
 5 July 2025
 
-This blog post includes by honest opinions on the CPython JIT. What I think we did well,
+This blog post includes my honest opinions on the CPython JIT. What I think we did well,
 what I think we could have done better. I'll also do some brief qualititative
 analysis.
 
