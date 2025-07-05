@@ -11,6 +11,9 @@ I don't know how long that is at this point ... 2.5, maybe almost 3 years?
 Anyways, I'm primarily responsible for Python's JIT compiler's
 [optimizer](https://docs.python.org/3.13/whatsnew/3.13.html#an-experimental-just-in-time-jit-compiler).
 
+Note that at this point of time, the JIT is still experimental. This means 
+it's not ready for prime time yet: this blog post may go out of date
+fairly quickly!
 
 ## Here's a short summary:
 
@@ -139,6 +142,8 @@ don't want to bring unwanted attention to the other efforts for the moment.
 Just know this: there are multiple parallel efforts to improve the JIT now 
 that we have a bigger community around it that can enable such work.
 The road getting here has been tough, but there's promise in our future.
+We also really need help testing the JIT and getting more data for it.
+Please try it out!
 
 
 ## Correction notice
