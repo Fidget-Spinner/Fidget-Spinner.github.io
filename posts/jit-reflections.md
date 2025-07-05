@@ -8,7 +8,7 @@ analysis.
 
 I've been working on CPython's JIT compiler since before the very start.
 I don't know how long that is at this point ... 2.5, maybe almost 3 years?
-Anyways, I'm primarly responsible for Python's JIT compiler's
+Anyways, I'm primarily responsible for Python's JIT compiler's
 [optimizer](https://docs.python.org/3.13/whatsnew/3.13.html#an-experimental-just-in-time-jit-compiler).
 
 
