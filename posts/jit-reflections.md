@@ -42,8 +42,8 @@ I'm really happy to say that we have more contributors today though:
 * Tomáš works on the optimizer and is a codeowner of it!
 * Diego works on the machine code generator to improve it on ARM, and sometimes
   the optimizer.
-* We also have various non core-dev drive-by contributors. Zheaoli and Noam are names
-  that I remember. Though I'm definitely missing a few names here.
+* We also have various drive-by contributors. Zheaoli, Noam and Donghee are 
+  names that I remember. Though I'm definitely missing a few names here.
 
 This community building was somewhat organic, but also very intentional. We
 actively tried to make the JIT easier to work on. If you dig up past discussions,
