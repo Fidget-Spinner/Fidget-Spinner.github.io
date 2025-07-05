@@ -18,7 +18,7 @@ The good:
 1. I think we're starting to build a community around the JIT, which is great.
 2. The JIT is also **teachable**. We have newcomers coming in and contributing.
 
-The bad (could use improvement):
+Could use improvement:
 1. Performance
 2. Inaccurate coverage of the JIT
 
@@ -64,7 +64,7 @@ There are a few other design decisions too, but those will be their own blog pos
 So I'm not talking about them here.
 
 
-## Bad: Performance
+## Could be improved: Performance
 
 CPython 3.13's JIT ranges from slower to the interpreter
 to roughly equivalent to the interpreter.
@@ -81,9 +81,11 @@ we _know_ is worse for it. You can see this effect very clearly on Thomas Wouter
 [here](https://github.com/Yhg1s/python-benchmarking-public). In short, the JIT is almost always slower
 than the interpreter if you use a modern compiler. This also assumes the interpreter doesn't get hit
 by random performance bugs on the side (which has happened many times now).
+**Note: this result only applies to our x64 benchmarks.**
+**I cannot conclude anything about AArch64, which has been improving over time.**
 
 You might ask: why is the 3.14 JIT not much faster? The real answer, which 
-again hurts me to say is that the 3.14 JIT has almost no major performance 
+again hurts me to say is that the 3.14 JIT has almost no major _optimizer_* 
 features over 3.13. In 3.14, we were mostly expanding the existing types 
 analysis pass to cover more bytecodes. We were also using that as a way to 
 teach new contributors about the JIT and encourage contribution. In short, we 
@@ -93,9 +95,12 @@ that were supposed to go into the JIT not go in, which I'm sorry for.
 Personally, I think building up more talent over prioritizing immediate 
 performance is the right choice for long-term sustainability of the JIT.
 
-## Bad: Inaccurate coverage
+*_optimizer_ = JIT optimizer, separate from the code generator.
+The code generator for x64 and AArch64 has seen improvements.
 
-The initial media coverage of the JIT got the numbers wrong by misinterpreting 
+## Could be improved: Inaccurate coverage
+
+The initial media coverage of the 3.13 JIT got the numbers wrong by misinterpreting 
 our results. There was this number 
 of "2-9%" faster being spread around. I think the first 
 major blog post that covered this was
@@ -103,10 +108,10 @@ major blog post that covered this was
 author of that post and I'm not trying to say that they did a bad job.
 Conveying performance is a really hard job. One that I'm still struggling with 
 [myself](./apology-tail-call.md). However, in good conscience, and as an 
-aspiring scientist, I can't stand by and watch people say the JIT is "2-9%" 
+aspiring scientist, I can't stand by and watch people say the 3.13 JIT is "2-9%" 
 faster than the intepreter. It's really more nuanced than that (see section 
 above). Often times, the CPython 3.13 JIT is a lot slower than the interpreter.
-Furthermore, the linked comment is that the JIT is 2-9% faster than the
+Furthermore, the linked comment is that the 3.13 JIT is 2-9% faster than the
 _tier 2_ interpreter. That's the interpreter that executes our JIT 
 intermediate representation by interpreting it, which is super slow. It's not 
 comparing to the actual CPython interpreter.
@@ -133,8 +138,20 @@ for the JIT's machine code. I
 don't want to bring unwanted attention to the other efforts for the moment. 
 Just know this: there are multiple parallel efforts to improve the JIT now 
 that we have a bigger community around it that can enable such work.
+The road getting here has been tough, but there's promise in our future.
 
 
+## Correction notice
+
+In a previous version of this blog post, I pointed out there were no major 
+performance additions to the JIT in 3.14. When I said this, I was thinking of 
+the JIT optimizer only, not the machine code generator. I am frankly 
+underqualified to talk about the machine code generator. I have since updated 
+the post to specify the optimizer. Furthermore, when I say _major_, I 
+don't meant to denigrate the efforts of our contributors. I had planned for 
+certain major features to enter the CPython JIT in 3.14, but missed them due 
+to my own lack of time. So I'm not pointing blaming anyone here other than 
+myself.
 
 
 
