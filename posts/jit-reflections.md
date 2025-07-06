@@ -81,7 +81,12 @@ to build CPython 3.14, I often found the interpreter outperforms the JIT. The JI
 parity or outperforming the interpreter if we use an old compiler like GCC 11 to build the interpreter.
 However, IMO that's not entirely fair to the interpreter, as we're purposely limiting it by using a compiler
 we _know_ is worse for it. You can see this effect very clearly on Thomas Wouter's analysis
-[here](https://github.com/Yhg1s/python-benchmarking-public). In short, the JIT is almost always slower
+[here](https://github.com/Yhg1s/python-benchmarking-public).
+
+![Performance of JIT Compiler across different compilers, Credit Thomas Wouters](jit-reflections-perf.png)
+(Image credits to Thomas Wouters). Anything below 1.00x on the graph is a slowdown.
+
+In short, the JIT is almost always slower
 than the interpreter if you use a modern compiler. This also assumes the interpreter doesn't get hit
 by random performance bugs on the side (which has happened many times now).
 **Note: this result only applies to our x64 benchmarks.**
