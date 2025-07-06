@@ -165,7 +165,7 @@ myself.
 
 Lastly, the (lack-of) performance gains for the JIT are for architectures that 
 I observed (mostly a range of x64 processors). It is possible that some 
-architectures have real gains that I'm not awrae of.
+architectures have real gains that I'm not aware of.
 
 
 
