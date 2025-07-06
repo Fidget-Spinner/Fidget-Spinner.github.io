@@ -119,6 +119,7 @@ richards: Mean +- std dev: 37.8 ms +- 2.4 ms
 nbody: Mean +- std dev: 104 ms +- 2 ms
 spectral_norm: Mean +- std dev: 96.0 ms +- 0.7 ms
 ````
+System/Build configuration: Ubuntu 22.04, Clang 20.1.7, PGO=true, LTO=thin. Tuned with `pyperf system tune`.
 
 You might ask: why is the 3.14 JIT not much faster? The real answer, which 
 again hurts me to say is that the 3.14 JIT has almost no major _optimizer_* 
