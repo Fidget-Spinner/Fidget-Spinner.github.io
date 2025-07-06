@@ -75,13 +75,14 @@ Calling a spade a spade: CPython 3.13's JIT is slow. It hurts me to say this con
 I work on it, but I don't want to sugarcoat my words here.
 
 The argument at the time was that it was a new feature and we needed to lay the foundations
-and test the waters. You might think that surely, CPython 3.14's JIT is a lot faster right? Nope.
+and test the waters. You might think that surely, CPython 3.14's JIT is a lot faster right?
+In some ways, the JIT has become faster, but only in select scenarios.
 The answer is again... complicated. When using a modern compiler like Clang 20
 to build CPython 3.14, I often found the interpreter outperforms the JIT. The JIT only really starts reaching
 parity or outperforming the interpreter if we use an old compiler like GCC 11 to build the interpreter.
 However, IMO that's not entirely fair to the interpreter, as we're purposely limiting it by using a compiler
 we _know_ is worse for it. You can see this effect very clearly on Thomas Wouter's analysis
-[here](https://github.com/Yhg1s/python-benchmarking-public).
+[here](https://github.com/Yhg1s/python-benchmarking-public). Note that this is the geometric mean. So there are select workloads where the JIT does show a real speedup!
 
 ![Performance of JIT Compiler across different compilers, Credit Thomas Wouters](jit-reflections-perf.png)
 (Image credits to Thomas Wouters). Anything below 1.00x on the graph is a slowdown.
@@ -91,6 +92,33 @@ than the interpreter if you use a modern compiler. This also assumes the interpr
 by random performance bugs on the side (which has happened many times now).
 **Note: this result only applies to our x64 benchmarks.**
 **I cannot conclude anything about AArch64, which has been improving over time.**
+
+In some cases, we do see significant speedups (up to ~20%) in certain 
+benchmarks. Indicating that some progress has been made on 3.14. Which is a 
+good thing! What we're tackling is that the performance 
+is a mixed bag and often not very predictable. In the
+[richards](https://github.com/python/pyperformance/blob/main/pyperformance/data-files/benchmarks/bm_richards/run_benchmark.py) benchmark, we see a ~20% speedup,
+but on the
+[nbody](https://github.com/python/pyperformance/blob/main/pyperformance/data-files/benchmarks/bm_nbody/run_benchmark.py)
+benchmark, we see a ~10% slowdown on my system, and a smaller slowdown for
+the
+[spectralnorm](https://github.com/python/pyperformance/blob/main/pyperformance/data-files/benchmarks/bm_spectral_norm/run_benchmark.py) benchmark.
+All of these are known 
+to be loop-heavy artificial benchmarks, which V8 has since
+[ditched](https://v8.dev/blog/real-world-performance) so in theory, they all 
+should see a speedup, but they don't, which is strange.
+
+```
+3.14 JIT Off:
+richards: Mean +- std dev: 44.5 ms +- 0.5 ms
+nbody: Mean +- std dev: 91.8 ms +- 3.5 ms
+spectral_norm: Mean +- std dev: 90.6 ms +- 0.7 ms
+
+3.14 JIT On:
+richards: Mean +- std dev: 37.8 ms +- 2.4 ms
+nbody: Mean +- std dev: 104 ms +- 2 ms
+spectral_norm: Mean +- std dev: 96.0 ms +- 0.7 ms
+````
 
 You might ask: why is the 3.14 JIT not much faster? The real answer, which 
 again hurts me to say is that the 3.14 JIT has almost no major _optimizer_* 
@@ -163,9 +191,11 @@ certain major features to enter the CPython JIT in 3.14, but missed them due
 to my own lack of time. So I'm not pointing blaming anyone here other than 
 myself.
 
-Lastly, the (lack-of) performance gains for the JIT are for architectures that 
+The (lack-of) performance gains for the JIT are for architectures that 
 I observed (mostly a range of x64 processors). It is possible that some 
 architectures have real gains that I'm not aware of.
 
+I also added some benchmarks run on my system, where I show a speedup in some 
+workloads, but a slowdown in others.
 
 
