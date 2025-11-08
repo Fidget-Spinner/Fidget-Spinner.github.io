@@ -166,7 +166,7 @@ Free-threading is taking off, but the current JIT doesn't work with it yet.
 
 The ideas for this are still a little nebuluous, but over the summer I had the fortune of contributing a little to ZJIT, Ruby's new JIT compiler, with help from Max Bernstein. It was a load of fun and I learnt a lot. Perhaps the most interesting thing is the idea of `PatchPoint` and `Ractors`.  I'm basically borrowing Ruby's ideas here!
 
-Ruby has had the nogil problem for their JIT compilers for ages. One way of making sure single-threaded-assumption optimizations still work is to add a watcher in the code (idea borrowed from Cinder, Instagram's JIT compiler for Python). This watcher is essentially a callback to invalidate something once an assumption holds true. This sounds not very concrete, but consider the following micro-operation trace:
+Ruby has had the nogil problem for their JIT compilers for ages. One way of making sure single-threaded-assumption optimizations still work is to add a watcher in the code (CPython's implementation was upstreamed from [Cinder](https://github.com/facebookincubator/cinder), Instagram's JIT compiler for Python). This watcher is essentially a callback to invalidate something once an assumption holds true. This sounds not very concrete, but consider the following micro-operation trace:
 
 ```
 _CHECK_VALIDITY
