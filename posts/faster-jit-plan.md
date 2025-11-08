@@ -2,7 +2,7 @@
 
 08-Nov-2025
 
-During the Python Core Dev Sprint in Cambridge, we planned to make the JIT in CPython 5% faster by 3.15 and 10% faster by 3.16. The planners present were Savannah Ostrowski, Mark Shannon, Ken Jin (me), Diego Russo and Brandt Bucher. We were accompanied by other CPython core team members as well.
+During the Python Core Dev Sprint in Cambridge hosted by ARM, we planned to make the JIT in CPython 5% faster by 3.15 and 10% faster by 3.16. The planners present were Savannah Ostrowski, Mark Shannon, Ken Jin (me), Diego Russo and Brandt Bucher. We were accompanied by other CPython core team members as well.
 
 You might wonder: 5% seems awfully conservative. However, note that this figure is the *geometric mean*. The number can range from slower to significantly faster. All numbers are [pyperformance](https://github.com/python/pyperformance) figures.
 
@@ -24,6 +24,8 @@ This is a paraphrase of what Savannah laid out [here](https://github.com/python/
 
 Profiling and debugger support is a must-have if we want the JIT to be production-ready. The JIT uses [Copy-and-patch](https://dl.acm.org/doi/10.1145/3485513) compilation to create its templates/stencils. Thanks to Savannah, we have support for [LLVM 20](https://github.com/python/cpython/issues/136895) and soon LLVM 21. LLVM 21 in theory should allow us to support stack unwinding through the JIT frames. This would allow debuggers and other tools to see the JIT code as a single frame. Currently the debugger I use gets lost when it tries to introspect JIT code.
 
+I can't explain more, because I don't know anything about debuggers and profilers :(.
+
 ### Trace recording JIT
 
 Our current JIT region selection algorithm could be improved. Here's the current pipeline:
@@ -39,7 +41,7 @@ There are two problems with the above:
 
 Other tracing JIT compilers like PyPy and TorchDynamo (`torch.compile`). Use some form of trace recording. This is not entirely true for TorchDynamo, as that seems to introspect values then do a symbolic interpretation over the bytecode. However, the key point is that live up-to-date information is present in both these systems.
 
-At the core dev sprint, Brandt nerd-sniped me to rewrite the entire JIT frontend. Using my free time in the past 2 months, I have done so. The [preliminary results](./media/bm-20251108-vultr-x86_64-Fidget%252dSpinner-tracing_jit-3.15.0a1+-7e2bc1d-vs-base.png) are: 1k more loc, roughly 1.5% faster geometric mean average on pyperformance. 100% faster (!!!) on the most improved benchmark (richards), and 15% slower on the slowest benchmark. The new JIT frontend now also supports generators (partially), custom dunders, object initialization, etc.
+At the core dev sprint, Brandt nerd-sniped me to rewrite the entire JIT frontend. Using my free time in the past 2 months, I have done so. The [preliminary results](./media/bm-20251108-vultr-x86_64-Fidget%252dSpinner-tracing_jit-3.15.0a1+-7e2bc1d-vs-base.png) are: 1k more loc, roughly 1.5% faster geometric mean average on pyperformance. 100% faster (!!! hopefully not a [bug](./apology-tail-call.md) on the most improved benchmark (richards), and 15% slower on the slowest benchmark. The new JIT frontend now also supports generators (partially), custom dunders, object initialization, etc.
 
 ![Performance of JIT Compiler across different compilers, Credit Thomas Wouters](./media/tracing_jit_benchmarks.png)
 (Image credits to Meta's Free-Threading Benchmarking Runner). Anything below 1.00x on the graph is a slowdown.
