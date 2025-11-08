@@ -28,12 +28,8 @@ Profiling and debugger support is a must-have if we want the JIT to be productio
 
 Our current JIT region selection algorithm could be improved. Here's the current pipeline:
 
-```mermaid
-flowchart LR
-    A[Bytecode] -->|Region selector| B[Micro-operation Intermediate Representation]
-    B -->|Optimizer| C[Optimized Micro-operation Stream]
-    C -->|Copy-and-Patch| D[Machine Code]
-```
+![CPython's JIT Pipeline](./media/jit-flowchart.svg)
+
 
 The *region selector*, aka. the JIT frontend, uses *trace projection*. In short, we guess where the traces will go, and use historical data from the interpreter's [inline caches](https://en.wikipedia.org/wiki/Inline_caching) to feed type information into our IR.
 
