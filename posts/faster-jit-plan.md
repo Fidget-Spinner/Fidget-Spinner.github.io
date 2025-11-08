@@ -39,7 +39,7 @@ There are two problems with the above:
 
 Other tracing JIT compilers like PyPy and TorchDynamo (`torch.compile`). Use some form of trace recording. This is not entirely true for TorchDynamo, as that seems to introspect values then do a symbolic interpretation over the bytecode. However, the key point is that live up-to-date information is present in both these systems.
 
-At the core dev sprint, Brandt nerd-sniped me to rewrite the entire JIT frontend. Using my free time in the past 2 months, I have done so. The [preliminary results](./media/bm-20251108-vultr-x86_64-Fidget%252dSpinner-tracing_jit-3.15.0a1+-7e2bc1d-vs-base.png) are: 1k more loc, Roughly 1.5% faster geometric mean average on pyperformance. 100% faster (!!!) on the most improved benchmark (richards), and 15% slower on the slowest benchmark.
+At the core dev sprint, Brandt nerd-sniped me to rewrite the entire JIT frontend. Using my free time in the past 2 months, I have done so. The [preliminary results](./media/bm-20251108-vultr-x86_64-Fidget%252dSpinner-tracing_jit-3.15.0a1+-7e2bc1d-vs-base.png) are: 1k more loc, roughly 1.5% faster geometric mean average on pyperformance. 100% faster (!!!) on the most improved benchmark (richards), and 15% slower on the slowest benchmark.
 
 ![Performance of JIT Compiler across different compilers, Credit Thomas Wouters](./media/tracing_jit_benchmarks.png)
 (Image credits to Meta's Free-Threading Benchmarking Runner). Anything below 1.00x on the graph is a slowdown.
