@@ -121,7 +121,7 @@ LOAD_BORROW y
 ADD_NO_REFCOUNT (+)
 ```
 
-I implemented the pass to do the lifetime analysis in CPython's JIT optimizer [earlier this year](https://github.com/python/cpython/issues/134584)  in CPython. However, as no bytecodes are converted yet, we don't see a speedup. We do see a speedup in microbenchmarks such as nbody of about [6%](https://github.com/python/cpython/pull/135465#issuecomment-3009304472). The key idea however, is that this now unblocks the register allocator, allowing it to do this:
+I implemented the pass to do the lifetime analysis in CPython's JIT optimizer [earlier this year](https://github.com/python/cpython/issues/134584)  in CPython. However, as almost no bytecodes are converted yet, we don't see a speedup. We do see a speedup in microbenchmarks such as nbody of about [6%](https://github.com/python/cpython/pull/135465#issuecomment-3009304472). The key idea however, is that this now unblocks the register allocator, allowing it to do this:
 
 ```
 LOAD_BORROW_REG_0_1 x
