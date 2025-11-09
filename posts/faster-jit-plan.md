@@ -46,7 +46,7 @@ At the core dev sprint, Brandt nerd-sniped me to rewrite the entire JIT frontend
 ![Performance of JIT Compiler across different compilers, Credit Thomas Wouters](./media/tracing_jit_benchmarks.png)
 (Image credits to Meta's Free-Threading Benchmarking Runner). Anything below 1.00x on the graph is a slowdown.
 
-The details of the impplementation are quite interesting to me, so you might want to give the [PR](https://github.com/python/cpython/pull/140310) a read. The key idea is to maintain two dispatch tables in a mechanism I call "dual dispatch". One table is the standard interpreter, the other is the tracing interpreter. we (ab)use computed gotos/tail calling to dispatch from one table to the other.
+The details of the implementation are quite interesting to me, so you might want to give the [PR](https://github.com/python/cpython/pull/140310) a read. The key idea is to maintain two dispatch tables in a mechanism I call "dual dispatch". One table is the standard interpreter, the other is the tracing interpreter. we (ab)use computed gotos/tail calling to dispatch from one table to the other.
 
 ### Better machine code generation
 
