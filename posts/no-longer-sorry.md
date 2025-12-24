@@ -17,7 +17,7 @@ version of MSVC. The Windows build is against a switch-case interpreter, but
 this in theory shouldn't matter too much, more on that in the next section.
 
 This is of course, a **hopefully accurate** result. I tried to be more diligent
-here, but I am of course not infallible.
+here, but I am of course not infallible. However, I have found that sharing early and making a fool of myself often works well, as it has led to people catching bugs in my code, so I shall continue doing so :).
 
 Also this assumes the change doesn't get reverted later in Python 3.15's 
 development cycle.
@@ -143,12 +143,12 @@ the speedups are greater.
 
 Thanks to Chris Eibl and Brandt Bucher, we managed to get the
 [PR for this](https://github.com/python/cpython/pull/143068)
-on MSVC over the finish line. I also want to sincerely thank the MSVC team,
-for this. I can't say this enough: they have been a joy to work with and
+on MSVC over the finish line. I also want to sincerely thank the MSVC team. I can't say this enough: they have been a joy to work with and
 I'm very impressed by what they've done, and I want to congratulate them
 on releasing Visual Studio 2026.
 
-![What's New in Python 3.15 with the mention](./media/python315-tc-msvc.png)
+This is now listed in the What's New for 3.15 notes:
+> Builds using Visual Studio 2026 (MSVC 18) may now use the new tail-calling interpreter. Results on an early experimental MSVC compiler reported roughly 15% speedup on the geometric mean of pyperformance on Windows x86-64 over the switch-case interpreter. We have observed speedups ranging from 15% for large pure-Python libraries to 40% for long-running small pure-Python scripts on Windows. (Contributed by Chris Eibl, Ken Jin, and Brandt Bucher in gh-143068. Special thanks to the MSVC team including Hulon Jenkins.)
 
 
 ### Where exactly do the speedups come from?
