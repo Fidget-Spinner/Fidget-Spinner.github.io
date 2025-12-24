@@ -120,7 +120,7 @@ The speedup is a geomtric mean of around 15-16%, with a
 range of ~60% slowdown (one or two outliers) to 78% speedup.
 However, the key thing is that the vast majority of benchmaarks sped up!
 
-![Tailcall results](./media/jit-flowchart.svg)
+![Tailcall results](./media/TC-PGO-Ex3-vs-PGO.svg)
 
 > [!WARNING]
 > These results are on an experimental internal MSVC compiler, public results below.
