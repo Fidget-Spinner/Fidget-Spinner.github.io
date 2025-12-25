@@ -109,7 +109,7 @@ is clearly about MSVC Windows x86-64. So what about that?
 ## Tail-calling for Windows
 
 > [!CAUTION]
-> The features for MSVC discussed below are to my knowledge, undocumented.
+> The features for MSVC discussed below are to my knowledge, experimental.
 > They are not guaranteed to always be around unless the MSVC team decide to keep them. Use at your own risk!
 
 These are the preliminary pyperformance results
@@ -151,6 +151,7 @@ on releasing Visual Studio 2026.
 This is now listed in the What's New for 3.15 notes:
 > Builds using Visual Studio 2026 (MSVC 18) may now use the new tail-calling interpreter. Results on an early experimental MSVC compiler reported roughly 15% speedup on the geometric mean of pyperformance on Windows x86-64 over the switch-case interpreter. We have observed speedups ranging from 15% for large pure-Python libraries to 40% for long-running small pure-Python scripts on Windows. (Contributed by Chris Eibl, Ken Jin, and Brandt Bucher in gh-143068. Special thanks to the MSVC team including Hulon Jenkins.)
 
+This is the [documentation for [[msvc::musttail]]](https://learn.microsoft.com/en-us/cpp/cpp/attributes?view=msvc-170#msvcmusttail).
 
 ### Where exactly do the speedups come from?
 
