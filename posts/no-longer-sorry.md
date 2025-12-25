@@ -121,6 +121,7 @@ range of ~60% slowdown (one or two outliers) to 78% speedup.
 However, the key thing is that the vast majority of benchmaarks sped up!
 
 ![Tailcall results](./media/TC-PGO-Ex3-vs-PGO.svg)
+
 *Chart credits to Michael Droettboom*
 
 > [!WARNING]
@@ -192,11 +193,13 @@ TARGET(BINARY_OP_ADD_INT) {
     frame->instr_ptr = next_instr;
     next_instr += 6;
     _PyStackRef right = stack_pointer[-1];
+
     // Check that LHS is an int.
     PyObject *value_o = PyStackRef_AsPyObjectBorrow(left);
     if (!_PyLong_CheckExactAndCompact(value_o)) {
         JUMP_TO_PREDICTED(BINARY_OP);
     }
+
     // Check that RHS is an int.
     // ... (same code as above for LHS)
 
