@@ -121,6 +121,7 @@ range of ~60% slowdown (one or two outliers) to 78% speedup.
 However, the key thing is that the vast majority of benchmaarks sped up!
 
 ![Tailcall results](./media/TC-PGO-Ex3-vs-PGO.svg)
+*Chart credits to Michael Droettboom*
 
 > [!WARNING]
 > These results are on an experimental internal MSVC compiler, public results below.
@@ -153,7 +154,7 @@ This is now listed in the What's New for 3.15 notes:
 
 ### Where exactly do the speedups come from?
 
-I used to believe the the tailcalling interpreters get their speedup
+I used to believe the the tail calling interpreters get their speedup
 from better register use. While I still believe that now, I suspect that is
 not the main reason for speedups in CPython.
 
