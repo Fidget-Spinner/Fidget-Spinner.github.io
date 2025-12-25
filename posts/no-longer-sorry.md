@@ -2,8 +2,8 @@
 
 24 December 2025
 
-Some time ago I posted an [apology peice](./apology-tail-call.md)
-for Python's tail caling results. I apologized for communicating performance
+Some time ago I posted an [apology piece](./apology-tail-call.md)
+for Python's tail calling results. I apologized for communicating performance
 results without noticing a compiler bug had occured.
 
 I can proudly say today that I am partially retracting that apology, but
