@@ -7,7 +7,7 @@ for Python's tail calling results. I apologized for communicating performance
 results without noticing a compiler bug had occured.
 
 I can proudly say today that I am partially retracting that apology, but
-only for two platforms---MacOs AArch64 (XCode Clang) and Windows x86-64 (MSVC).
+only for two platforms---macOS AArch64 (XCode Clang) and Windows x86-64 (MSVC).
 
 In our own experiments, the tail calling interpreter for CPython
 was found to beat the computed
