@@ -1,8 +1,6 @@
 # Python 3.15's interpreter for Windows x86-64 should hopefully be 15% faster
 
-24 December 2025
-
-Some time ago I posted an [apology piece](./apology-tail-call.md)
+Some time ago I posted an [apology piece](./2025-03-08-apology-tail-call.md)
 for Python's tail calling results. I apologized for communicating performance
 results without noticing a compiler bug had occured.
 
