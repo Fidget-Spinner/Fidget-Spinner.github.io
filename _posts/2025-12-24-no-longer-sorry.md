@@ -123,7 +123,7 @@ The speedup is a geomtric mean of around 15-16%, with a
 range of ~60% slowdown (one or two outliers) to 78% speedup.
 However, the key thing is that the vast majority of benchmaarks sped up!
 
-![Tailcall results](./media/TC-PGO-Ex3-vs-PGO.svg)
+![Tailcall results]({{ site.baseurl }}/media/TC-PGO-Ex3-vs-PGO.svg)
 
 *Chart credits to Michael Droettboom*
 
