@@ -5,3 +5,5 @@ description: Random Ramblings
 author: Ken Jin
 
 permalink: /posts/:title.html
+
+baseurl: https://fidget-spinner.github.io/
