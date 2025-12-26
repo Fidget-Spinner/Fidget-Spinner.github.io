@@ -328,6 +328,18 @@ $env:PlatformToolset = "v145"
 Hopefully, we can distribute this in an easier binary form in the future
 once Python 3.15's development matures!
 
+# Addendum & Edits
+
+I was asked for a cross-compiler test. So here's a quick and dirty toy benchmark of pystones. The last row is the tail call enabled build. All configurations have PGO.
+On this toy benchmark, we get roughly a 30% uplift.
+Note that this is unscientific as it was only a sample size of 1 and I cannot disable Turbo Boost on my laptop on Windows for some reason.
+
+| Compiler  | PlatformToolSet | Pystones/second (higher is better) |
+|-----------|-----------------|------------------------------------|
+| VS2019    | 142             | 677544                             |
+| VS2022    | 143             | 710773                             |
+| VS2026    | 145             | 682089                             |
+| VS2026+TC | 145             | 970306                             |
 
 
 
