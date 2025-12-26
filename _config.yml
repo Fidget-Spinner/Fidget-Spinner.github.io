@@ -3,6 +3,5 @@ plugins:
 title: Ken Jin's Blog
 description: Random Ramblings
 author: Ken Jin
-theme: jekyll-theme-minimal
 
-permalink: /:title.html
+permalink: /posts/:title.html
