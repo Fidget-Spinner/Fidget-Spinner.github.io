@@ -1,0 +1,6 @@
+plugins:
+  - jekyll-feed
+title: Ken Jin's Blog
+description: Random Ramblings
+author: Ken Jin
+theme: jekyll-theme-minimal

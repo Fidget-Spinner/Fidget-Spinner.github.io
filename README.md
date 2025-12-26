@@ -8,3 +8,4 @@ Hello! I'm a Python core team member since Aug 2021. I mostly work on the interp
 * [My Final Year Project / Bachelors' Theses](./posts/fyp.md).
 * [My apology for Python's tail-calling interpreter's results](./posts/apology-tail-call.md).
 
+[RSS Feed](/feed.xml) | [This blog's source](https://github.com/Fidget-Spinner/Fidget-Spinner.github.io) | [My GitHub](https://github.com/Fidget-Spinner)
