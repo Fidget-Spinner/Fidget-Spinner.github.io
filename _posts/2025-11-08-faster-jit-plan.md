@@ -1,6 +1,9 @@
 ---
 title: A Plan for 5-10%* Faster Free-Threaded JIT by Python 3.16
 ---
+# A Plan for 5-10%* Faster Free-Threaded JIT by Python 3.16
+
+08-Nov-2025
 
 During the Python Core Dev Sprint in Cambridge hosted by ARM, we planned to make the JIT in CPython 5% faster by 3.15 and 10% faster by 3.16. The planners present were Savannah Ostrowski, Mark Shannon, Ken Jin (me), Diego Russo and Brandt Bucher. We were accompanied by other CPython core team members as well.
 

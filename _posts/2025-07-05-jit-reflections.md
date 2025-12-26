@@ -1,6 +1,9 @@
 ---
-title: Reflections on 2 years of CPython's JIT Compiler: The good, the bad, the ugly
+title: Reflections on 2 years of CPython's JIT Compiler---The good, the bad, the ugly
 ---
+# Reflections on 2 years of CPython's JIT Compiler: The good, the bad, the ugly
+
+5 July 2025
 
 This blog post includes my honest opinions on the CPython JIT. What I think we did well,
 what I think we could have done better. I'll also do some brief qualititative
