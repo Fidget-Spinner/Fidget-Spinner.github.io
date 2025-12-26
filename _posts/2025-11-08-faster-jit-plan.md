@@ -9,7 +9,7 @@ During the Python Core Dev Sprint in Cambridge hosted by ARM, we planned to make
 
 You might wonder: 5% seems awfully conservative. However, note that this figure is the *geometric mean*. The number can range from slower to significantly faster. All numbers are [pyperformance](https://github.com/python/pyperformance) figures.
 
-In my [previous blog post]({{ site.baseurl }}/posts/jit-reflections.md), I talked about the Python 3.13 and 3.14 JIT's state. We're planning to change that for 3.15 and 3.16.
+In my [previous blog post]({{ site.baseurl }}/posts/jit-reflections.html), I talked about the Python 3.13 and 3.14 JIT's state. We're planning to change that for 3.15 and 3.16.
 
 ## The Plan for 3.15
 This is a paraphrase of what Savannah laid out [here](https://github.com/python/cpython/issues/139038). The difference is that I'm listing things in chronological order of what I expect will be merged into CPython.
