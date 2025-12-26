@@ -87,7 +87,7 @@ However, IMO that's not entirely fair to the interpreter, as we're purposely lim
 we _know_ is worse for it. You can see this effect very clearly on Thomas Wouter's analysis
 [here](https://github.com/Yhg1s/python-benchmarking-public). Note that this is the geometric mean. So there are select workloads where the JIT does show a real speedup!
 
-![Performance of JIT Compiler across different compilers, Credit Thomas Wouters](jit-reflections-perf.png)
+![Performance of JIT Compiler across different compilers, Credit Thomas Wouters]({{ site.baseurl }}/media/jit-reflections-perf.png)
 (Image credits to Thomas Wouters). Anything below 1.00x on the graph is a slowdown.
 
 In short, the JIT is almost always slower
