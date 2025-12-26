@@ -168,7 +168,7 @@ is around [12k](https://github.com/python/cpython/blob/main/Python/generated_cas
 for the switch-case and computed goto interpreter.
 
 This has caused many issues for compilers in the past, too many to list in fact.
-I have a EuroPython 2025 talk about this. In short, this overly large function
+I have a EuroPython 2025 [talk](https://youtu.be/pUj32SF94Zw?si=aXHa-70nt8EeN9nX) about this. In short, this overly large function
 breaks a lot of compiler heuristics.
 
 One of the most beneficial optimisations is inlining. In the past, we've found
