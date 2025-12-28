@@ -150,7 +150,9 @@ Thanks to Chris Eibl and Brandt Bucher, we managed to get the
 [PR for this](https://github.com/python/cpython/pull/143068)
 on MSVC over the finish line. I also want to sincerely thank the MSVC team. I can't say this enough: they have been a joy to work with and
 I'm very impressed by what they've done, and I want to congratulate them
-on releasing Visual Studio 2026.
+on releasing Visual Studio 2026. This feature was made possible thanks
+to new feaetures in Visual Studio 2026, and would not have been achievable
+with prior Visual Studio versions.
 
 This is now listed in the What's New for 3.15 notes:
 > Builds using Visual Studio 2026 (MSVC 18) may now use the new tail-calling interpreter. Results on an early experimental MSVC compiler reported roughly 15% speedup on the geometric mean of pyperformance on Windows x86-64 over the switch-case interpreter. We have observed speedups ranging from 15% for large pure-Python libraries to 40% for long-running small pure-Python scripts on Windows. (Contributed by Chris Eibl, Ken Jin, and Brandt Bucher in gh-143068. Special thanks to the MSVC team including Hulon Jenkins.)
