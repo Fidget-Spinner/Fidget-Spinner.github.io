@@ -155,7 +155,7 @@ to new feaetures in Visual Studio 2026, and would not have been achievable
 with prior Visual Studio versions.
 
 This is now listed in the What's New for 3.15 notes:
-> Builds using Visual Studio 2026 (MSVC 18) may now use the new tail-calling interpreter. Results on an early experimental MSVC compiler reported roughly 15% speedup on the geometric mean of pyperformance on Windows x86-64 over the switch-case interpreter. We have observed speedups ranging from 15% for large pure-Python libraries to 40% for long-running small pure-Python scripts on Windows. (Contributed by Chris Eibl, Ken Jin, and Brandt Bucher in gh-143068. Special thanks to the MSVC team including Hulon Jenkins.)
+> Builds using Visual Studio 2026 (MSVC 18) may now use the new tail-calling interpreter. Results on Visual Studio 18.1.1 report between 15-20% speedup on the geometric mean of pyperformance on Windows x86-64 over the switch-case interpreter on an AMD Ryzen 7 5800X. We have observed speedups ranging from 14% for large pure-Python libraries to 40% for long-running small pure-Python scripts on Windows. This was made possible by a new feature introduced in MSVC 18. (Contributed by Chris Eibl, Ken Jin, and Brandt Bucher in gh-143068. Special thanks to the MSVC team including Hulon Jenkins.)
 
 This is the [documentation for [[msvc::musttail]]](https://learn.microsoft.com/en-us/cpp/cpp/attributes?view=msvc-170#msvcmusttail).
 
