@@ -350,7 +350,8 @@ Note that this is unscientific as it was only a sample size of 1 and I cannot di
 Chris Eibl has done excellent work benchmarking tail calling on various 
 configurations and processors. The [results](https://gist.github.com/chris-eibl/fade55faaad97e2cd12f5587ac1f4aa0) on Windows suggest between 
 15-20% improved performance on a AMD Ryzen 7 5800X with Visual Studio 2026,
-on CPython `main` branch.
+on CPython `main` branch, with a range of -11--55% speedups on
+the individual benchmarks.
 
 
 ![Chris' results]({{ site.baseurl }}/media/5800X-msvc.pgo2-vs-msvc.pgo.tc.svg)
