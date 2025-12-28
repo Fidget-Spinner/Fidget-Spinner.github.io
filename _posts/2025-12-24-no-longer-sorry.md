@@ -347,8 +347,13 @@ Note that this is unscientific as it was only a sample size of 1 and I cannot di
 | VS2026+TC | 145             | 970306                             |
 
 
+Chris Eibl has done excellent work benchmarking tail calling on various 
+configurations and processors. The [results](https://gist.github.com/chris-eibl/fade55faaad97e2cd12f5587ac1f4aa0) on Windows suggest between 
+15-20% improved performance on a AMD Ryzen 7 5800X with Visual Studio 2026,
+on CPython `main` branch.
 
 
+![Chris' results]({{ site.baseurl }}/media/5800X-msvc.pgo2-vs-msvc.pgo.tc.svg)
 
 
 
