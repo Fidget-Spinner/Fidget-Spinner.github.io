@@ -7,3 +7,5 @@ author: Ken Jin
 permalink: /posts/:title.html
 
 baseurl: /
+
+theme: jekyll-theme-minimal
