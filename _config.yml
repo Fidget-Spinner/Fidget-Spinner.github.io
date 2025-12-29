@@ -8,4 +8,4 @@ permalink: /posts/:title.html
 
 baseurl: /
 
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
