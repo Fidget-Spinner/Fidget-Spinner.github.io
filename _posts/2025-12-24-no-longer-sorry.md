@@ -327,7 +327,7 @@ With VS 2026, after cloning CPython, for a release build with PGO:
 
 ```powershell
 $env:PlatformToolset = "v145"
-./PCbuild/build.bat --tail-call-interp -c Release -p x64 --pgo
+./PCbuild/build.bat -p x64 --tail-call-interp --pgo
 ```
 
 Hopefully, we can distribute this in an easier binary form in the future
