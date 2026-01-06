@@ -151,7 +151,7 @@ Thanks to Chris Eibl and Brandt Bucher, we managed to get the
 on MSVC over the finish line. I also want to sincerely thank the MSVC team. I can't say this enough: they have been a joy to work with and
 I'm very impressed by what they've done, and I want to congratulate them
 on releasing Visual Studio 2026. This feature was made possible thanks
-to new feaetures in Visual Studio 2026, and would not have been achievable
+to new features in Visual Studio 2026, and would not have been achievable
 with prior Visual Studio versions.
 
 This is now listed in the What's New for 3.15 notes:
