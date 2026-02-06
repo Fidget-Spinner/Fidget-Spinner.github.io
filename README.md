@@ -1,4 +1,4 @@
-Hello! I'm a Python core team member since Aug 2021. I mostly work on the interpreter, JIT compiler's optimizer, and other things in a volunteer capacity. I recently started an actual day job: MPhil/PhD student researching JIT compilers supervised by Laurie Tratt. For open source matters: you can reach me through my email `kenjin@python.org`.
+Hello! I'm a Python core team member since Aug 2021. I mostly work on the interpreter, JIT compiler's optimizer, and other things in a volunteer capacity. For open source matters: you can reach me through my email `kenjin@python.org`.
 
 <ul>
   {% for post in site.posts %}
