@@ -63,7 +63,7 @@ Mark is technically excellent, and I think he knows the Internet gives him too m
 
 Diego is also great. He's responsible for the JIT on ARM hardware, and also has recently started work on making the JIT friendly to profilers. I cannot understate how hard of a problem this is.
 
-Brandt is less active these days, but he laid the original foundation for our machine code backend, without which we'd have new contributors writing assembler, which probably would've put more people off.
+Brandt laid the original foundation for our machine code backend, without which we'd have new contributors writing assembler, which probably would've put more people off.
 
 ## Part 4: Talking to people
 
