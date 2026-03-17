@@ -26,7 +26,7 @@ What worked in attracting people were the usual software engineering practices: 
 
 Other things that worked: encouraging people, celebrating achievements big or small. Every JIT PR had a clear outcome, which I suspect gave people a sense of direction.
 
-The community optimization efforts paid off. The JIT went from 1% faster on x86_64 Linux to 3-4% faster (see the blue line below):
+The community optimization efforts paid off. The JIT went from 1% faster on x86_64 Linux to 3-4% faster (see the blue line below) over that time period:
 
 ![JIT performance vs interpreter during community optimization effort]({{ site.baseurl }}/media/jit-on-track/refcount-jit-vs-interpreter.png)
 (Image credits to https://doesjitgobrrr.com/).
