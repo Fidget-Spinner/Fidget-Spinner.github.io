@@ -10,7 +10,7 @@ title: Python 3.15's JIT is now back on track
 
 Great news---we've hit our (very modest) performance goals for the CPython JIT over a year early for macOS AArch64, and a few months early for x86_64 Linux. The 3.15 alpha JIT is about **11-12%** faster on macOS AArch64 than the tail calling interpreter, and **5-6%** faster than the standard interpreter on x86_64 Linux. These [numbers](https://doesjitgobrrr.com/run/2026-03-17) are geometric means and are preliminary. The actual range is something like a **20% slowdown to over 100% speedup** (ignoring the ``unpack_sequence`` microbenchmark). We don't have proper free-threading support yet, but we're aiming for that in 3.15/3.16. The JIT is now back on track.
 
-**I cannot understate how tough this was**. There was a point where I was seriously wondering if the JIT project would ever produce meaningful speedups. To recap, the original CPython JIT had practically no speedups: 8 months ago I posted a [JIT reflections article]({{ site.baseurl }}/posts/jit-reflections.html) on how the original CPython JIT in 3.13 and 3.14 was often slower than the interpreter. That was also around the time where the Faster CPython team lost funding by its main sponsor. I'm a volunteer so this didn't affect me, but more importantly it did affect my friends working there, and at a point of time it seemed the JIT's future was uncertain.
+**I cannot overstate how tough this was**. There was a point where I was seriously wondering if the JIT project would ever produce meaningful speedups. To recap, the original CPython JIT had practically no speedups: 8 months ago I posted a [JIT reflections article]({{ site.baseurl }}/posts/jit-reflections.html) on how the original CPython JIT in 3.13 and 3.14 was often slower than the interpreter. That was also around the time where the Faster CPython team lost funding by its main sponsor. I'm a volunteer so this didn't affect me, but more importantly it did affect my friends working there, and at a point of time it seemed the JIT's future was uncertain.
 
 So what changed from 3.13 and 3.14? I'm not going to give some heroic tale of how we rescued the JIT from the jaws of failure through our acumen. I honestly attribute a lot of our current success to luck---right time, right place, right people, right bets. I seriously don't think this would've been possible if a single one of the core JIT contributors: Savannah Ostrowski, Mark Shannon, Diego Russo, Brandt Bucher, and me were not in the picture. To not exclude the other active JIT contributors, I will also name a few more people: Hai Zhu, Zheaoli, Tomas Roun, Reiden Ong, Donghee Na, and I am probably missing a few more.
 
@@ -61,7 +61,7 @@ We have a great infrastructure team. I say this partly in jest, because it's one
 
 Mark is technically excellent, and I think he knows the Internet gives him too much praise already so I'm not going to say anything more here :).
 
-Diego is also great. He's responsible for the JIT on ARM hardware, and also has recently started work on making the JIT friendly to profilers. I cannot understate how hard of a problem this is.
+Diego is also great. He's responsible for the JIT on ARM hardware, and also has recently started work on making the JIT friendly to profilers. I cannot overstate how hard of a problem this is.
 
 Brandt laid the original foundation for our machine code backend, without which we'd have new contributors writing assembler, which probably would've put more people off.
 
