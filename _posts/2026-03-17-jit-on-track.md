@@ -3,7 +3,7 @@ title: Python 3.15's JIT is now back on track
 ---
 # Python 3.15's JIT is now back on track
 
-18 Mar 2026
+17 Mar 2026
 
 ![JIT performance as of 17 March (PST). Lower is better versus interpreter]({{ site.baseurl }}/media/brrr-20260318.png)
 (JIT performance as of 17 March (PST). Lower is better versus interpreter. Image credits to https://doesjitgobrrr.com/).
