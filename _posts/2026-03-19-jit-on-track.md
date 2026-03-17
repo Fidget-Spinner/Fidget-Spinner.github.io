@@ -5,8 +5,8 @@ title: Python 3.15's JIT is now back on track
 
 18 Mar 2026
 
-![JIT performance as of 17 March (PST)]({{ site.baseurl }}/media/brrr-20260318.png)
-(Image credits to https://doesjitgobrrr.com/).
+![JIT performance as of 17 March (PST). Lower is better versus interpreter]({{ site.baseurl }}/media/brrr-20260318.png)
+(JIT performance as of 17 March (PST). Lower is better versus interpreter. Image credits to https://doesjitgobrrr.com/).
 
 Great news---we've hit our performance goals for the CPython JIT over a year early for macOS AArch64, and a few months early for x86_64 Linux. The 3.15 alpha JIT is about **11-12%** faster on macOS AArch64 than the tail calling interpreter, and **5-6%** faster than the standard interpreter on x86_64 Linux. These [numbers](https://doesjitgobrrr.com/run/2026-03-17) are geometric means and are preliminary. The actual range is something like a **20% slowdown to over 100% speedup** (ignoring the ``unpack_sequence`` microbenchmark). We don't have proper free-threading support yet, but we're aiming for that in 3.15/3.16. The JIT is now back on track.
 
