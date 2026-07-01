@@ -3,7 +3,7 @@ title: Python 3.15's Ultra-Low Overhead Interpreter Profiling Mode
 ---
 # Python 3.15's Ultra-Low Overhead Interpreter Profiling Mode
 
-2 July 2026
+1 July 2026
 
 Python's 3.15 JIT shows [modest speedups over the interpreter]({{ site.baseurl }}/posts/jit-on-track.html). Key to that is a (to the best of my knowledge), new form of interpreter profiling that was developed for recording execution through the interpreter for JIT compilation. This form of profiling does not introduce much overhead over the interpreter as well, allowing for low-overhead JIT compilation. I wouldn't be surprised if someone actually already came up with this before, but as far as I could find, it's not documented anywhere.
 
